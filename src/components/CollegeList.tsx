@@ -101,8 +101,8 @@ const collegesData = [
 
 const CollegeList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedProgram, setSelectedProgram] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('all');
+  const [selectedProgram, setSelectedProgram] = useState('all');
 
   // Get unique programs from collegesData
   const allPrograms = Array.from(
@@ -112,8 +112,8 @@ const CollegeList = () => {
   const filteredColleges = collegesData.filter(college => {
     const matchesSearch = college.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           college.location.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCountry = selectedCountry === '' || college.country === selectedCountry;
-    const matchesProgram = selectedProgram === '' || college.programs.includes(selectedProgram);
+    const matchesCountry = selectedCountry === 'all' || college.country === selectedCountry;
+    const matchesProgram = selectedProgram === 'all' || college.programs.includes(selectedProgram);
     
     return matchesSearch && matchesCountry && matchesProgram;
   });
@@ -141,7 +141,7 @@ const CollegeList = () => {
                 <SelectValue placeholder="Select Country" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Countries</SelectItem>
+                <SelectItem value="all">All Countries</SelectItem>
                 <SelectItem value="US">United States</SelectItem>
                 <SelectItem value="Canada">Canada</SelectItem>
               </SelectContent>
@@ -151,7 +151,7 @@ const CollegeList = () => {
                 <SelectValue placeholder="Select Program" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Programs</SelectItem>
+                <SelectItem value="all">All Programs</SelectItem>
                 {allPrograms.map((program) => (
                   <SelectItem key={program} value={program}>
                     {program}

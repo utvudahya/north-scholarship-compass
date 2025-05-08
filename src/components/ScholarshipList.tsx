@@ -92,14 +92,14 @@ const scholarshipsData = [
 
 const ScholarshipList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCountry, setSelectedCountry] = useState('all');
   
   const filteredScholarships = scholarshipsData.filter(scholarship => {
     const matchesSearch = scholarship.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           scholarship.organization.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === '' || scholarship.category === selectedCategory;
-    const matchesCountry = selectedCountry === '' || scholarship.country === selectedCountry || scholarship.country === 'Both';
+    const matchesCategory = selectedCategory === 'all' || scholarship.category === selectedCategory;
+    const matchesCountry = selectedCountry === 'all' || scholarship.country === selectedCountry;
     
     return matchesSearch && matchesCategory && matchesCountry;
   });
@@ -127,7 +127,7 @@ const ScholarshipList = () => {
                 <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="Merit-Based">Merit-Based</SelectItem>
                 <SelectItem value="Need-Based">Need-Based</SelectItem>
                 <SelectItem value="Research">Research</SelectItem>
@@ -142,7 +142,7 @@ const ScholarshipList = () => {
                 <SelectValue placeholder="Select Country" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Countries</SelectItem>
+                <SelectItem value="all">All Countries</SelectItem>
                 <SelectItem value="US">United States</SelectItem>
                 <SelectItem value="Canada">Canada</SelectItem>
               </SelectContent>
