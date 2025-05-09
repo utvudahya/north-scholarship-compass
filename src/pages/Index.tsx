@@ -10,13 +10,23 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-violet-50">
       <Navigation />
       <main className="pt-16">
         <Hero />
-        <TopScholarships />
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-violet-100/30 to-transparent transform -skew-y-3 z-0"></div>
+          <div className="relative z-10">
+            <TopScholarships />
+          </div>
+        </div>
         <ScholarshipList />
-        <CollegeList />
+        <div className="relative py-12">
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white transform skew-y-3 z-0"></div>
+          <div className="relative z-10">
+            <CollegeList />
+          </div>
+        </div>
         <EMICalculator />
       </main>
       <Footer />

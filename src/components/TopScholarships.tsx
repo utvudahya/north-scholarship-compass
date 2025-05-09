@@ -49,14 +49,24 @@ const TopScholarships = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {topScholarships.map((scholarship) => (
-            <Card key={scholarship.id} className="transition-all hover:shadow-md">
+          {topScholarships.map((scholarship, index) => (
+            <Card 
+              key={scholarship.id} 
+              className="transition-all hover:-translate-y-2 hover:shadow-xl shadow-lg border-t-4"
+              style={{ 
+                borderTopColor: index % 4 === 0 ? '#8b5cf6' : 
+                               index % 4 === 1 ? '#0ea5e9' : 
+                               index % 4 === 2 ? '#10b981' : 
+                               '#f97316',
+                background: 'linear-gradient(to bottom right, white, #f9fafb)'
+              }}
+            >
               <CardHeader className="pb-2 flex flex-row justify-between items-start">
                 <div>
                   <CardTitle className="text-xl font-bold">{scholarship.title}</CardTitle>
                   <p className="text-sm text-gray-500">{scholarship.organization}</p>
                 </div>
-                <Badge>{scholarship.country}</Badge>
+                <Badge className="shadow-sm">{scholarship.country}</Badge>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center mb-4 text-scholarship-purple">
@@ -64,7 +74,17 @@ const TopScholarships = () => {
                   <span className="font-semibold">{scholarship.amount}</span>
                 </div>
                 <p className="text-gray-600 mb-4">{scholarship.description}</p>
-                <Button className="w-full">Apply Now</Button>
+                <Button 
+                  className="w-full transform transition-all hover:shadow-md"
+                  style={{ 
+                    background: index % 4 === 0 ? 'linear-gradient(to right, #8b5cf6, #a78bfa)' : 
+                              index % 4 === 1 ? 'linear-gradient(to right, #0ea5e9, #38bdf8)' : 
+                              index % 4 === 2 ? 'linear-gradient(to right, #10b981, #34d399)' : 
+                              'linear-gradient(to right, #f97316, #fb923c)'
+                  }}
+                >
+                  Apply Now
+                </Button>
               </CardContent>
             </Card>
           ))}

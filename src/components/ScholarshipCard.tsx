@@ -26,20 +26,20 @@ const ScholarshipCard: React.FC<ScholarshipProps> = ({
 }) => {
   const getCategoryColor = (cat: string) => {
     const categories: Record<string, string> = {
-      'Merit-Based': 'bg-scholarship-purple text-white',
-      'Need-Based': 'bg-scholarship-blue text-white',
-      'Research': 'bg-scholarship-teal text-white',
-      'Sports': 'bg-scholarship-green text-white',
-      'Arts': 'bg-scholarship-orange text-white',
-      'Minority': 'bg-scholarship-yellow text-black',
-      'International': 'bg-gray-700 text-white'
+      'Merit-Based': 'bg-gradient-to-r from-scholarship-purple to-purple-400 text-white shadow-md shadow-purple-200/50',
+      'Need-Based': 'bg-gradient-to-r from-scholarship-blue to-blue-400 text-white shadow-md shadow-blue-200/50',
+      'Research': 'bg-gradient-to-r from-scholarship-teal to-teal-400 text-white shadow-md shadow-teal-200/50',
+      'Sports': 'bg-gradient-to-r from-scholarship-green to-green-400 text-white shadow-md shadow-green-200/50',
+      'Arts': 'bg-gradient-to-r from-scholarship-orange to-orange-400 text-white shadow-md shadow-orange-200/50',
+      'Minority': 'bg-gradient-to-r from-scholarship-yellow to-yellow-300 text-black shadow-md shadow-yellow-200/50',
+      'International': 'bg-gradient-to-r from-gray-700 to-gray-600 text-white shadow-md shadow-gray-200/50'
     };
     
     return categories[cat] || 'bg-gray-500 text-white';
   };
 
   return (
-    <div className="scholarship-card">
+    <div className="scholarship-card bg-gradient-to-br from-white via-white to-gray-50 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl shadow-lg border-t-4 border-t-scholarship-purple/50">
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">{title}</h3>
         <Badge className={getCategoryColor(category)}>{category}</Badge>
@@ -56,10 +56,10 @@ const ScholarshipCard: React.FC<ScholarshipProps> = ({
           <span className="text-sm font-medium">Deadline: {deadline}</span>
         </div>
         <div className="ml-auto">
-          <Badge variant="outline">{country}</Badge>
+          <Badge variant="outline" className="shadow-sm border-2">{country}</Badge>
         </div>
       </div>
-      <Button className="w-full">View Details</Button>
+      <Button className="w-full bg-gradient-to-r from-scholarship-purple to-purple-500 shadow-md hover:shadow-lg transition-shadow">View Details</Button>
     </div>
   );
 };

@@ -111,4 +111,37 @@
   .section-heading {
     @apply text-3xl font-bold mb-8 text-center;
   }
+
+  /* New 3D card effect */
+  .card-3d {
+    @apply bg-white rounded-lg shadow-lg transition-all duration-300 
+    hover:shadow-xl transform hover:-translate-y-2;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-scholarship-purple via-indigo-400 to-scholarship-blue;
+  }
+  
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-br from-scholarship-teal via-cyan-400 to-scholarship-blue;
+  }
+
+  /* New animation */
+  @keyframes float-rotate {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  
+  .animate-float-rotate {
+    animation: float-rotate 6s ease-in-out infinite;
+  }
 }
