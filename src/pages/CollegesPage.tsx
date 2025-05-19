@@ -22,6 +22,33 @@ const CollegesPage = () => {
             </p>
           </div>
         </div>
+        
+        {/* SEO Content Section */}
+        <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-sm mb-8 rounded-lg shadow-sm max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-bold text-scholarship-blue mb-4">Canadian Universities & Colleges</h2>
+              <p className="text-gray-700 mb-3">
+                Explore top-ranked Canadian educational institutions offering scholarships and financial aid for 2025. 
+                Our database includes comprehensive information on admission requirements, available Canada scholarship programs, and campus facilities.
+              </p>
+              <p className="text-gray-700">
+                Whether you're looking for undergraduate or graduate opportunities, our Canada Scholar resource helps you find the perfect educational match with the best funding options.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-scholarship-purple mb-4">US Universities & Colleges</h2>
+              <p className="text-gray-700 mb-3">
+                Discover America's leading universities and colleges along with their scholarship USA programs for domestic and international students. 
+                Each institution profile includes information on available scholarship US opportunities, application deadlines, and eligibility requirements.
+              </p>
+              <p className="text-gray-700">
+                Find the perfect educational institution that aligns with your academic goals and offers financial support through our comprehensive database.
+              </p>
+            </div>
+          </div>
+        </section>
+        
         <CollegeList />
       </main>
       <Footer />
