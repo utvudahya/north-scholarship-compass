@@ -34,17 +34,17 @@ const Footer = () => {
               <li><Link to="/colleges" className="text-gray-400 hover:text-white text-sm">All Colleges</Link></li>
               <li><Link to="/colleges?country=US" className="text-gray-400 hover:text-white text-sm">US Colleges</Link></li>
               <li><Link to="/colleges?country=Canada" className="text-gray-400 hover:text-white text-sm">Canadian Colleges</Link></li>
-              <li><Link to="/rankings" className="text-gray-400 hover:text-white text-sm">College Rankings</Link></li>
+              <li><Link to="/colleges" className="text-gray-400 hover:text-white text-sm">College Rankings</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
-              <li><Link to="/faq" className="text-gray-400 hover:text-white text-sm">FAQ</Link></li>
-              <li><Link to="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white text-sm">FAQ</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
