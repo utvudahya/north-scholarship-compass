@@ -7,6 +7,7 @@ import CollegeList from '@/components/CollegeList';
 import TopScholarships from '@/components/TopScholarships';
 import EMICalculator from '@/components/EMICalculator';
 import Footer from '@/components/Footer';
+import AdPlaceholder from '@/components/AdPlaceholder';
 
 const Index = () => {
   return (
@@ -25,20 +26,38 @@ const Index = () => {
           </div>
         </section>
         
+        {/* Top Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AdPlaceholder format="horizontal" className="my-8" />
+        </div>
+        
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-violet-100/30 to-transparent transform -skew-y-3 z-0"></div>
           <div className="relative z-10">
             <TopScholarships />
           </div>
         </div>
+        
         <ScholarshipList />
+        
+        {/* Middle Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AdPlaceholder format="rectangle" className="my-10" />
+        </div>
+        
         <div className="relative py-12">
           <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white transform skew-y-3 z-0"></div>
           <div className="relative z-10">
             <CollegeList />
           </div>
         </div>
+        
         <EMICalculator />
+        
+        {/* Bottom Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AdPlaceholder format="horizontal" className="my-8" />
+        </div>
         
         {/* Additional SEO Content Section */}
         <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm">

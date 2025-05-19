@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import EMICalculator from '@/components/EMICalculator';
 import Footer from '@/components/Footer';
+import AdPlaceholder from '@/components/AdPlaceholder';
 
 const CalculatorPage = () => {
   return (
@@ -22,7 +23,18 @@ const CalculatorPage = () => {
             </p>
           </div>
         </div>
+        
+        {/* Top Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AdPlaceholder format="horizontal" className="my-6" />
+        </div>
+        
         <EMICalculator />
+        
+        {/* Bottom Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AdPlaceholder format="rectangle" className="my-8" />
+        </div>
       </main>
       <Footer />
     </div>
