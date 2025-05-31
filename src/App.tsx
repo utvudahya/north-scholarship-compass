@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import Index from "./pages/Index";
 import ScholarshipsPage from "./pages/ScholarshipsPage";
 import CollegesPage from "./pages/CollegesPage";
@@ -21,30 +21,12 @@ const queryClient = new QueryClient({
   },
 });
 
-// Add an AdSense component to handle initialization
-const AdSenseInitializer = () => {
-  useEffect(() => {
-    try {
-      // Wait for AdSense to be loaded
-      if ((window as any).adsbygoogle) {
-        (window as any).adsbygoogle = (window as any).adsbygoogle || [];
-        (window as any).adsbygoogle.push({});
-      }
-    } catch (error) {
-      console.error("Error initializing AdSense:", error);
-    }
-  }, []);
-
-  return null;
-};
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <HashRouter>
-        <AdSenseInitializer />
         <Suspense fallback={<div className="h-screen w-full flex items-center justify-center">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Index />} />
